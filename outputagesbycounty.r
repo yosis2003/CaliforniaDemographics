@@ -24,8 +24,8 @@ all_results <- list()
 # Loop through each Excel file and read it into a data frame
 for (file in excel_files) {
     data <- read_excel(file)
-    twenty_results <- (data[9, seq(2, 83, by = 2)])
-    sixtyfive_results <- data[21, seq(2, 83, by = 2)]
+    twenty_results <- (data[9, seq(2, ncol(data), by = 2)])
+    sixtyfive_results <- data[21, seq(2, ncol(data), by = 2)]
     twenty_results <- as.numeric(twenty_results)
     sixtyfive_results <- as.numeric(sixtyfive_results)
     calculated_results = twenty_results - sixtyfive_results
